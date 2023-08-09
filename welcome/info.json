@@ -1,0 +1,12 @@
+{
+  "author": ["noahdm4321"],
+  "description": "WelcomeRand is a cog for sending customisable and context-based welcome messages to new users. It's named after it's main feature - it randomly generates different messages for each member.",
+  "install_msg": "Thanks for installing `welcomerand`. See `[p]help wrand` for details.",
+  "short": "Customisable welcome messages.",
+  "hidden": false,
+  "disabled": false,
+  "required_cogs": {},
+  "requirements": [],
+  "tags": ["welcome", "joinmessage"],
+  "type": "COG"
+}

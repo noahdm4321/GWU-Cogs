@@ -9,7 +9,6 @@
 | system            | Check server status             | https://github.com/Vexed01/Vex-Cogs         |
 | timechannel       | Setup UTC clock channel         | https://github.com/Vexed01/Vex-Cogs         |
 | cmdlog*            | Log commands sent to bot        | https://github.com/Vexed01/Vex-Cogs         |
-| welcomecount      | Welcome people when they join   | https://github.com/Tobotimus/Tobo-Cogs      |
 | roomer            | Creates new vc for groups       | https://github.com/Dav-Git/Dav-Cogs         |
 | timestamps        | Generates discord timestamps    | https://github.com/kreusada/Kreusada-Cogs   |
 | embedcreator      | Creates json for embed messages | https://github.com/kreusada/Kreusada-Cogs   |
@@ -46,6 +45,7 @@ And load them with `.load <cog name>`
 - Permanent messages
 - Catagory roles
 - Student role assignment
+- Randomly generated welcome message.
 
 ###### ** Custom cog needed
 
