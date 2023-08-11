@@ -17,9 +17,9 @@ def gen_replacements() -> dict[str, str]:
         formatted_24h_time = time.strftime("%H:%M")
         replacements[f"{key}-24h"] = formatted_24h_time
 
-        hour = time.strftime("%H")
-        minute = time.strftime("%M")
-        hour_offset = "!!!" 
+        hour = int(time.strftime("%H"))
+        minute = int(time.strftime("%M"))
+        hour_offset = "!!!"
         if hour < 12 and hour != 0:
             hour_offset = f"+{hour}"
             if minute >= 30:
