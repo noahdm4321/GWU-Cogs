@@ -45,7 +45,6 @@ And load them with `.load <cog name>`
 - Permanent messages
 - Catagory roles
 - Student role assignment
-- Randomly generated welcome message.
 
 ###### ** Custom cog needed
 
