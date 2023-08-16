@@ -33,7 +33,6 @@ class TimeStamps(Cog):
     async def red_delete_data_for_user(self, **kwargs):
         return
 
-    @app_commands.command()
     @commands.command(usage="<date_or_time>", aliases=["timestamps"])
     async def timestamp(self, interaction: discord.Interaction, ctx: Context, *, dti: DateConverter):
         """Produce a Discord timestamp.
