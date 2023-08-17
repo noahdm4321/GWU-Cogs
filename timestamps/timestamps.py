@@ -33,8 +33,8 @@ class TimeStamps(Cog):
     async def red_delete_data_for_user(self, **kwargs):
         return
 
-    @commands.command(usage="<date_or_time>", aliases=["timestamps"])
-    async def timestamp(self, interaction: discord.Interaction, ctx: Context, *, dti: DateConverter):
+    @app_commands.command(usage="<date_or_time>", aliases=["timestamps"])
+    async def timestamp(self, interaction: discord.Interaction, author: Context.author, member: discord.Member, embed: Context.embed_requested, colour: Context.embed_colour, dti: DateConverter):
         """Produce a Discord timestamp.
 
         Timestamps are a feature added to Discord in the summer of 2021,
@@ -64,12 +64,12 @@ class TimeStamps(Cog):
             message += f"`<t:{ts}:{i.upper()}>`: <t:{ts}:{i.upper()}>\n"
             message += f"`<t:{ts}:{i.lower()}>`: <t:{ts}:{i.lower()}>\n"
         message += f"`<t:{ts}:R>`: <t:{ts}:R>\n"
-        if await ctx.embed_requested():
+        if await embed:
             await interaction.response.send_message(
                 content=ts
-                if isinstance(ctx.author, discord.Member) and ctx.author.is_on_mobile()
+                if isinstance(author, member) and author.is_on_mobile()
                 else None,
-                embed=discord.Embed(description=message, color=(await ctx.embed_colour())),
+                embed=discord.Embed(description=message, color=(await colour)),
                 ephemeral=True,
             )
         else:
