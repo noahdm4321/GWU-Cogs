@@ -8,20 +8,20 @@
 | anotherpingcog    | A better ping command           | https://github.com/Vexed01/Vex-Cogs         |
 | system            | Check server status             | https://github.com/Vexed01/Vex-Cogs         |
 | timechannel       | Setup UTC clock channel         | https://github.com/Vexed01/Vex-Cogs         |
-| cmdlog*            | Log commands sent to bot        | https://github.com/Vexed01/Vex-Cogs         |
-| roomer            | Creates new vc for groups       | https://github.com/Dav-Git/Dav-Cogs         |
 | timestamps        | Generates discord timestamps    | https://github.com/kreusada/Kreusada-Cogs   |
 | embedcreator      | Creates json for embed messages | https://github.com/kreusada/Kreusada-Cogs   |
 | levelup           | Dean's List role assignment     | https://github.com/vertyco/vrt-cogs         |
-| tickettool        | Ticketing system for reporting  | https://github.com/AAA3A-AAA3A/AAA3A-cogs   |
+| tickets           | Ticketing system for reporting  | https://github.com/vertyco/vrt-cogs         |
 | consolelogs       | Display console logs in discord | https://github.com/AAA3A-AAA3A/AAA3A-cogs   |
 | autopublisher     | Auto publish announcements      | https://github.com/ltzmax/maxcogs           |
-| updatechecker     | Notify me when repos update     | https://github.com/NeuroAssassin/Toxic-Cogs |
 | deleter           | Cleans messages from channels   | https://github.com/NeuroAssassin/Toxic-Cogs |
 | giftaway          | Giveaways                       | https://github.com/Flame442/FlameCogs       |
-| embedutils        | Edit bot messages               | https://github.com/phenom4n4n/phen-cogs     |
+| autoroler         | Assign roles on join            | https://github.com/Dav-Git/Dav-Cogs         |
+| botstatus         | Create bot status in Discord    | https://github.com/Dav-Git/Dav-Cogs         |
+| chatchart         | Generate charts of activity     | https://github.com/aikaterna/aikaterna-cogs |
+| onedit            | Allows edit of bot commands     | https://github.com/zephyrkul/FluffyCogs     |
+| editor            | Edit bot messages               | https://github.com/NeuroAssassin/Toxic-Cogs |
 
-###### * Install but do not load
 
 ### Installation
 
@@ -34,22 +34,16 @@ And load them with `.load <cog name>`
 
 ## Features still needed
 - Custom build welcome message**
-- sql database - Investigate postgresql server for redbot
-- Suggestion Box
 - Trading verification role
-- Opt-out roles
-- Channel message rule enforcement (must have attachements, must follow RegEx)
-- Gw2 account name logger
-- Copy pasta
-- Channel sugestions based on regex
+- Opt-out roles**
+- Gw2 account name logger (optional)
+- Channel sugestions based on regex**
 - Permanent messages
-- Catagory roles
-- Student role assignment
+- Catagory roles** (optional)
+- Student role assignment**
 
 ###### ** Custom cog needed
 
 #### Verify features
 - twitch
   - Filter streams for Gw2 only
-- tickettool
-  - Easily operational with buttons
