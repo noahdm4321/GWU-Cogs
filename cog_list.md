@@ -7,7 +7,7 @@
 | welcome           | Sends welcome message on join   | https://github.com/TrustyJAID/Trusty-cogs   |
 | anotherpingcog    | A better ping command           | https://github.com/Vexed01/Vex-Cogs         |
 | system            | Check server status             | https://github.com/Vexed01/Vex-Cogs         |
-| timechannel       | Setup UTC clock channel         | https://github.com/Vexed01/Vex-Cogs         |
+| timechannel       | Setup UTC clock channel         | https://github.com/noahdm4321/GWU-Cogs      |
 | timestamps        | Generates discord timestamps    | https://github.com/kreusada/Kreusada-Cogs   |
 | embedcreator      | Creates json for embed messages | https://github.com/kreusada/Kreusada-Cogs   |
 | levelup           | Dean's List role assignment     | https://github.com/vertyco/vrt-cogs         |
