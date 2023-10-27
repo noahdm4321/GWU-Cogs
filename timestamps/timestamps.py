@@ -1,6 +1,6 @@
 import datetime
 import discord
-from redbot.core import commands
+from redbot.core import commands, app_commands
 from redbot.core.bot import Red
 from redbot.core.commands import Cog
 
@@ -21,7 +21,7 @@ class TimeStamps(Cog):
     async def red_delete_data_for_user(self, **kwargs):
         return
 
-    @commands.command(name="timestamp", description="Create a discord timestamp relative to the current time")
+    @app_commands.command(name="timestamp", description="Create a discord timestamp relative to the current time")
     async def timestamp(self, interaction: discord.Interaction, weeks: int=0, days: int=0, hours: int=0, minutes: int=0):
         ts = datetime.datetime.now() + datetime.timedelta(minutes=days) + datetime.timedelta(hours=hours) + datetime.timedelta(days=minutes) + datetime.timedelta(weeks=weeks)
         ts = int(ts.timestamp())
