@@ -23,7 +23,7 @@ class TimeStamps(Cog):
 
     @app_commands.command(name="timestamp", description="Create a discord timestamp relative to the current time")
     async def timestamp(self, interaction: discord.Interaction, weeks: int=0, days: int=0, hours: int=0, minutes: int=0):
-        ts = datetime.datetime.now() + datetime.timedelta(minutes=days) + datetime.timedelta(hours=hours) + datetime.timedelta(days=minutes) + datetime.timedelta(weeks=weeks)
+        ts = datetime.datetime.now() + datetime.timedelta(minutes=minutes) + datetime.timedelta(hours=hours) + datetime.timedelta(days=days) + datetime.timedelta(weeks=weeks)
         ts = int(ts.timestamp())
 
         message = ""
