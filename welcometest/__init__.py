@@ -4,7 +4,7 @@ Sends welcome DMs to users that join the server.
 import json
 from pathlib import Path
 
-LOG_FOLDER = "log/lui-cogs/welcome/"
+LOG_FOLDER = "log/gwu-cogs/welcome/"
 
 from redbot.core.bot import Red
 from .welcome import Welcome

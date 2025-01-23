@@ -336,14 +336,14 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
     # MESSAGE COMMANDS #
     ####################
 
-    # [p]welcomeset
-    @commands.group(name="welcomeset")
+    # [p]welcometest
+    @commands.group(name="welcometest")
     @commands.guild_only()
     @checks.mod_or_permissions()
     async def welcome(self, ctx: Context):
         """Server welcome message settings."""
 
-    # [p]welcomeset dm
+    # [p]welcometest dm
     @welcome.group(name="dm")
     async def dm(self, ctx: Context):
         """Server welcome DM settings.
@@ -352,7 +352,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         Subcommands under this command control the content and behaviors of welcome DMs.
         """
 
-    # [p]welcomeset dm message
+    # [p]welcometest dm message
     @dm.command(name="message", aliases=["msg"])
     async def setmessage(self, ctx: Context):
         """Interactively configure the contents of the welcome DM."""
@@ -382,7 +382,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         )
         LOGGER.info(message.content)
 
-    # [p]welcomeset dm title
+    # [p]welcometest dm title
     @dm.command(name="title")
     async def setTitle(self, ctx: Context):
         """Interactively configure the title for the welcome DM."""
@@ -412,7 +412,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         )
         LOGGER.info(title.content)
 
-    # [p]welcomeset dm image
+    # [p]welcometest dm image
     @dm.command(name="image")
     async def setImage(self, ctx: Context, imageUrl: str = None):
         """Sets an image in the embed with a URL.
@@ -435,14 +435,14 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         )
         LOGGER.info("Image set to %s", imageUrl)
 
-    # [p]welcomeset dm test
+    # [p]welcometest dm test
     @dm.command(name="test")
     async def test(self, ctx: Context):
         """Test the welcome DM by sending a DM to you."""
         await self.sendWelcomeMessage(ctx.message.author, test=True)
         await ctx.send("If this server has been configured, you should have received a DM.")
 
-    # [p]welcomeset dm toggle
+    # [p]welcometest dm toggle
     @dm.command(name="toggle")
     async def toggledm(self, ctx: Context):
         """Toggle sending a welcome DM."""
@@ -470,7 +470,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
                 ctx.message.author.id,
             )
 
-    # [p]welcomeset greetings
+    # [p]welcometest greetings
     @welcome.group(name="greetings")
     async def greetings(self, ctx: Context):
         """Server greeting channel and greeting messages settings.
@@ -484,7 +484,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         - `returning`: pool of greetings that are sent to returning users
         """
 
-    # [p]welcomeset greetings add
+    # [p]welcometest greetings add
     @greetings.command(name="add")
     async def greetAdd(self, ctx: Context, name: str, pool: Optional[str] = None):
         """Add a new greeting entry.
@@ -551,12 +551,12 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         await self.config.guild(ctx.guild).get_attr(key).set(greetings)
         return
 
-    # [p]welcomeset greetings channelset
+    # [p]welcometest greetings channelset
     @greetings.group(name="channelset", aliases=["channelconfig", "chconfig", "chset"])
     async def greetChannelConfig(self, ctx: Context):
         """Manage server welcome channel settings."""
 
-    # [p]welcomeset greetings channelset channel
+    # [p]welcometest greetings channelset channel
     @greetChannelConfig.command(name="channel")
     async def greetChannelSet(self, ctx: Context, channel: discord.TextChannel = None):
         """Set the welcome channel
@@ -578,7 +578,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
 
         return
 
-    # [p]welcomeset greetings channelset postfaileddm
+    # [p]welcometest greetings channelset postfaileddm
     @greetChannelConfig.command(name="postfaileddm", aliases=["faileddm", "togglefaileddm"])
     async def greetChannelSetPostFailedDm(self, ctx: Context):
         """Toggle whether to post failed DM's to the welcome channel."""
@@ -599,7 +599,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
             else info("Failed DM's will **not** be posted to the welcome channel.")
         )
 
-    # [p]welcomeset greetings list
+    # [p]welcometest greetings list
     @greetings.command(name="list", aliases=["ls"])
     async def greetList(self, ctx: Context, pool: Optional[str] = None):
         """List all greetings on the server.
@@ -644,7 +644,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
             pageList.append(embed)
         await menu(ctx, pageList, DEFAULT_CONTROLS)
 
-    # [p]welcomeset greetings remove
+    # [p]welcometest greetings remove
     @greetings.command(name="remove", aliases=["delete", "del", "rm"])
     async def greetRemove(self, ctx: Context, name: str, pool: Optional[str] = None):
         """Remove a greeting entry.
@@ -695,7 +695,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
             await ctx.send(f"{name} not in list of greetings")
         return
 
-    # [p]welcomeset log
+    # [p]welcometest log
     @welcome.group(name="log")
     async def log(self, ctx: Context):
         """Server welcome logging settings.
@@ -704,7 +704,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         Subcommands under this command control the logging behavior.
         """
 
-    # [p]welcomeset log channel
+    # [p]welcometest log channel
     @log.command(name="channel", aliases=["ch"])
     async def setLogChannel(self, ctx: Context, channel: discord.TextChannel = None):
         """Set log channel. Defaults to current channel.
@@ -733,7 +733,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
             "Welcome channel set to #%s (%s)", ctx.message.channel.name, ctx.message.channel.id
         )
 
-    # [p]welcomeset log toggle
+    # [p]welcometest log toggle
     @log.command(name="toggle")
     async def toggleLog(self, ctx: Context):
         """Toggle sending logs to a channel."""
@@ -768,7 +768,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
                 ctx.message.author.id,
             )
 
-    # [p]welcomeset tag
+    # [p]welcometest tag
     @welcome.group(name="tag", aliases=["desc, description, descriptions"])
     async def tag(self, ctx: Context):
         """Manage user descriptions.
@@ -777,7 +777,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         will be printed out to the configured logging channel.
         """
 
-    # [p]welcomeset tag add
+    # [p]welcometest tag add
     @tag.command(name="add", aliases=["create", "new", "edit", "set"])
     async def addTag(self, ctx: Context, user: discord.User, *, description: str):
         """Add a description to a user.
@@ -812,7 +812,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         )
         LOGGER.debug(description)
 
-    # [p]welcomeset tag get
+    # [p]welcometest tag get
     @tag.command(name="get", aliases=["show"])
     async def getTag(self, ctx: Context, user: discord.User):
         """Get a description for a user.
@@ -836,7 +836,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
 
         await ctx.send(info("No description found for that user."))
 
-    # [p]welcomeset tag list
+    # [p]welcometest tag list
     @tag.command(name="list", aliases=["ls"])
     async def listTags(self, ctx: Context):
         """List all descriptions."""
@@ -850,7 +850,7 @@ class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
         )
         await menu(ctx, pageList, DEFAULT_CONTROLS)
 
-    # [p]welcomeset tag remove
+    # [p]welcometest tag remove
     @tag.command(name="remove", aliases=["delete", "del", "rm"])
     async def removeTag(self, ctx: Context, user: discord.User):
         """Remove a description from a user.
