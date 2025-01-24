@@ -21,7 +21,7 @@ from .helpers import createTagListPages
 LOGGER = logging.getLogger("red.luicogs.Welcome")
 
 
-class Welcome(commands.Cog):  # pylint: disable=too-many-instance-attributes
+class Welcometest(commands.Cog):  # pylint: disable=too-many-instance-attributes
     """Send a welcome DM on server join."""
 
     # Class constructor
